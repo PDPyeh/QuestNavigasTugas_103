@@ -13,10 +13,13 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.RadioButton
+import androidx.compose.material3.RadioButtonDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
+import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
@@ -34,6 +37,8 @@ import androidx.compose.ui.unit.dp
 import com.example.questnavigastugas_103.Peserta
 import com.example.questnavigastugas_103.R
 import com.example.questnavigastugas_103.ui.theme.BlackDeep
+import com.example.questnavigastugas_103.ui.theme.BlackSoft
+import com.example.questnavigastugas_103.ui.theme.GrayLight
 import com.example.questnavigastugas_103.ui.theme.RedPrimary
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -87,7 +92,7 @@ fun FormPendaftaran(
                     titleContentColor = Color.White
                 ),
                 navigationIcon = {
-                    TextButton(onClick = onBack) { Text(stringResource(R.string.back)) }
+                    TextButton(onClick = onBack) { Text(stringResource(R.string.back), color = Color.White ) }
                 }
             )
         }
@@ -106,7 +111,21 @@ fun FormPendaftaran(
                     onValueChange = { nama = it },
                     modifier = Modifier.fillMaxWidth(),
                     placeholder = { Text(stringResource(R.string.placeholder_nama)) },
-                    singleLine = true
+                    singleLine = true,
+                    colors = OutlinedTextFieldDefaults.colors(
+                        focusedBorderColor = RedPrimary,
+                        unfocusedBorderColor = GrayLight,
+                        focusedTextColor = Color.White,
+                        unfocusedTextColor = Color.White,
+                        cursorColor = RedPrimary,
+                        focusedTrailingIconColor = RedPrimary,
+                        focusedLabelColor = RedPrimary,
+                        unfocusedLabelColor = GrayLight,
+                        focusedPlaceholderColor = GrayLight,
+                        unfocusedPlaceholderColor = GrayLight,
+                        focusedContainerColor = BlackSoft,
+                        unfocusedContainerColor = BlackSoft,
+                    )
                 )
             }
             Column {
@@ -138,7 +157,21 @@ fun FormPendaftaran(
                     value = alamat,
                     onValueChange = { alamat = it },
                     modifier = Modifier.fillMaxWidth(),
-                    placeholder = { Text(stringResource(R.string.placeholder_alamat)) }
+                    placeholder = { Text(stringResource(R.string.placeholder_alamat)) },
+                    colors = OutlinedTextFieldDefaults.colors(
+                        focusedBorderColor = RedPrimary,
+                        unfocusedBorderColor = GrayLight,
+                        focusedTextColor = Color.White,
+                        unfocusedTextColor = Color.White,
+                        cursorColor = RedPrimary,
+                        focusedTrailingIconColor = RedPrimary,
+                        focusedLabelColor = RedPrimary,
+                        unfocusedLabelColor = GrayLight,
+                        focusedPlaceholderColor = GrayLight,
+                        unfocusedPlaceholderColor = GrayLight,
+                        focusedContainerColor = BlackSoft,
+                        unfocusedContainerColor = BlackSoft,
+                    )
                 )
             }
             Button(
@@ -169,8 +202,15 @@ private fun RadioRow(
                 horizontalArrangement = Arrangement.spacedBy(12.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                RadioButton(selected = selected == label, onClick = { onSelect(label) })
-                Text(label)
+                RadioButton(
+                    selected = selected == label,
+                    onClick = { onSelect(label) },
+                    colors = RadioButtonDefaults.colors(
+                        selectedColor = RedPrimary,
+                        unselectedColor = GrayLight
+                    )
+                    )
+                Text(label, color = Color.White)
             }
         }
     }
