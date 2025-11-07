@@ -20,6 +20,7 @@ fun Beranda(onSubmitClick: () -> Unit) {
                 .padding(24.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.SpaceBetween
+
         ) {
 
         }
