@@ -1,3 +1,32 @@
 <resources>
     <string name="app_name">QuestNavigasTugas_103</string>
+    <!-- Beranda -->
+    <string name="selamat_datang">Selamat Datang</string>
+    <string name="nama_mahasiswa">Pascal Pahlevi Pasha</string>
+    <string name="nim">20250140001</string>
+    <string name="submit">Submit</string>
+    <string name="back">Back</string>
+    <string name="beranda">Beranda</string>
+    !-- Form -->
+    <string name="form_title">Formulir Pendaftaran</string>
+    <string name="nama_lengkap">NAMA LENGKAP</string>
+    <string name="placeholder_nama">Isian nama lengkap</string>
+    <string name="jenis_kelamin">JENIS KELAMIN</string>
+    <string name="laki_laki">Laki-laki</string>
+    <string name="perempuan">Perempuan</string>
+    <string name="status_perkawinan">STATUS PERKAWINAN</string>
+    <string name="janda">Janda</string>
+    <string name="lajang">Lajang</string>
+    <string name="duda">Duda</string>
+    <string name="alamat">ALAMAT</string>
+    <string name="placeholder_alamat">Alamat</string>
+    <!-- List -->
+    <string name="list_title">List Daftar Peserta</string>
+    <string name="tampilan_data">Tampilan Data</string>
+    <string name="form_isian">Form Isian</string>
+    <!-- Dialog -->
+    <string name="konfirmasi_data">Konfirmasi Data</string>
+    <string name="edit_lagi">Edit Lagi</string>
+    <string name="kirim">Kirim</string>
+
 </resources>
