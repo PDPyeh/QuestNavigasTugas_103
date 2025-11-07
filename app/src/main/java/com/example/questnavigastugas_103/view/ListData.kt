@@ -9,10 +9,12 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Button
 import androidx.compose.material3.ElevatedCard
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -20,6 +22,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.example.questnavigastugas_103.R
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ListData(
     items: List<Peserta>,
@@ -27,7 +30,7 @@ fun ListData(
     toForm: () -> Unit
 ){
     Scaffold(
-        topBar = { SmallTopAppBar(title = { Text(stringResource(R.string.list_title)) }) }
+        topBar = { TopAppBar(title = { Text(stringResource(R.string.list_title)) }) }
     ) { inner ->
         Column(
             modifier = Modifier
