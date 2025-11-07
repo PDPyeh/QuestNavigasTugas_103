@@ -10,6 +10,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Button
 import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -75,6 +76,13 @@ fun ListData(
                     .fillMaxWidth()
                     .height(48.dp)
             ) { Text(stringResource(R.string.beranda)) }
+            OutlinedButton(
+                onClick = toForm,
+                shape = MaterialTheme.shapes.extraLarge,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(48.dp)
+            ) { Text(stringResource(R.string.form_isian)) }
         }
     }
 }
