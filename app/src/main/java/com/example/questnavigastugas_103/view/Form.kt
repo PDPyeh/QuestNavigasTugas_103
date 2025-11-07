@@ -89,6 +89,23 @@ fun FormPendaftaran(
                     singleLine = true
                 )
             }
+            Column{
+                Text(stringResource(R.string.status_perkawinan), fontWeight = FontWeight.SemiBold)
+                RadioRow(
+                    options = listOf(
+                        stringResource(R.string.janda),
+                        stringResource(R.string.lajang),
+                        stringResource(R.string.duda)
+                    ),
+                    selected = status,
+                    onSelect = { status = it }
+                )
+            }
         }
     }
+}
+
+@Composable
+fun RadioRow(options: List<String>, selected: String, onSelect: () -> Unit) {
+    TODO("Not yet implemented")
 }
