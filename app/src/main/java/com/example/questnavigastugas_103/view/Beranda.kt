@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -47,6 +48,9 @@ fun Beranda(onSubmitClick: () -> Unit) {
                 Text(stringResource(R.string.nama_mahasiswa))
                 Text(stringResource(R.string.nim), style = MaterialTheme.typography.bodySmall)
             }
+            Button(
+
+            ) { }
         }
     }
 }
