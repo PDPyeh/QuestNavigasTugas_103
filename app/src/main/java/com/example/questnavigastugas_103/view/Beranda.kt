@@ -55,7 +55,9 @@ fun Beranda(onSubmitClick: () -> Unit) {
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(52.dp)
-            ) { }
+            ) {
+                Text(stringResource(R.string.submit))
+            }
         }
     }
 }
