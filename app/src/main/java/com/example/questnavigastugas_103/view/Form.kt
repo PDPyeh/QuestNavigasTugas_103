@@ -1,6 +1,7 @@
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -10,6 +11,7 @@ import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -126,6 +128,20 @@ fun FormPendaftaran(
 }
 
 @Composable
-fun RadioRow(options: List<String>, selected: String, onSelect: () -> Unit) {
-    TODO("Not yet implemented")
+private fun RadioRow(
+    options: List<String>,
+    selected: String,
+    onSelect: (String) -> Unit
+) {
+    Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        options.forEach { label ->
+            Row(
+                horizontalArrangement = Arrangement.spacedBy(12.dp),
+                verticalAlignment = androidx.compose.ui.Alignment.CenterVertically
+            ) {
+                RadioButton(selected = selected == label, onClick = { onSelect(label) })
+                Text(label)
+            }
+        }
+    }
 }
