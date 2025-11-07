@@ -9,6 +9,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
@@ -32,6 +33,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.example.questnavigastugas_103.Peserta
 import com.example.questnavigastugas_103.R
+import com.example.questnavigastugas_103.ui.theme.BlackDeep
+import com.example.questnavigastugas_103.ui.theme.RedPrimary
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -75,11 +78,12 @@ fun FormPendaftaran(
         )
     }
     Scaffold(
+        containerColor = BlackDeep,
         topBar = {
             TopAppBar(
                 title = { Text(stringResource(R.string.form_title)) },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = Color(0xC30F45),
+                    containerColor = RedPrimary,
                     titleContentColor = Color.White
                 ),
                 navigationIcon = {
@@ -96,7 +100,7 @@ fun FormPendaftaran(
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
             Column {
-                Text(stringResource(R.string.nama_lengkap), fontWeight = FontWeight.SemiBold)
+                Text(stringResource(R.string.nama_lengkap), fontWeight = FontWeight.SemiBold, color = Color.White)
                 OutlinedTextField(
                     value = nama,
                     onValueChange = { nama = it },
@@ -106,7 +110,7 @@ fun FormPendaftaran(
                 )
             }
             Column {
-                Text(stringResource(R.string.jenis_kelamin), fontWeight = FontWeight.SemiBold)
+                Text(stringResource(R.string.jenis_kelamin), fontWeight = FontWeight.SemiBold, color = Color.White)
                 RadioRow(
                     options = listOf(
                         stringResource(R.string.laki_laki),
@@ -117,7 +121,7 @@ fun FormPendaftaran(
                 )
             }
             Column{
-                Text(stringResource(R.string.status_perkawinan), fontWeight = FontWeight.SemiBold)
+                Text(stringResource(R.string.status_perkawinan), fontWeight = FontWeight.SemiBold, color = Color.White)
                 RadioRow(
                     options = listOf(
                         stringResource(R.string.janda),
@@ -129,7 +133,7 @@ fun FormPendaftaran(
                 )
             }
             Column {
-                Text(stringResource(R.string.alamat), fontWeight = FontWeight.SemiBold)
+                Text(stringResource(R.string.alamat), fontWeight = FontWeight.SemiBold, color = Color.White)
                 OutlinedTextField(
                     value = alamat,
                     onValueChange = { alamat = it },
@@ -141,6 +145,10 @@ fun FormPendaftaran(
                 enabled = valid,
                 onClick = { showDialog = true },
                 shape = MaterialTheme.shapes.extraLarge,
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = RedPrimary,
+                    contentColor = Color.White
+                ),
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(52.dp)
