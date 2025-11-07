@@ -2,6 +2,7 @@
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -53,5 +54,17 @@ fun FormPendaftaran(
                 }) { Text(stringResource(R.string.edit_lagi)) }
             }
         )
+    }
+    Scaffold(
+        topBar = {
+            SmallTopAppBar(
+                title = { Text(stringResource(R.string.form_title)) },
+                navigationIcon = {
+                    TextButton(onClick = onBack) { Text(stringResource(R.string.back)) }
+                }
+            )
+        }
+    ) {
+
     }
 }
