@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -49,7 +50,11 @@ fun Beranda(onSubmitClick: () -> Unit) {
                 Text(stringResource(R.string.nim), style = MaterialTheme.typography.bodySmall)
             }
             Button(
-
+                onClick = onSubmitClick,
+                shape = MaterialTheme.shapes.extraLarge,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(52.dp)
             ) { }
         }
     }
