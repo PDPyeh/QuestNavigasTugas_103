@@ -23,6 +23,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -98,6 +99,17 @@ fun FormPendaftaran(
                     singleLine = true
                 )
             }
+            Column {
+                Text(stringResource(R.string.jenis_kelamin), fontWeight = FontWeight.SemiBold)
+                RadioRow(
+                    options = listOf(
+                        stringResource(R.string.laki_laki),
+                        stringResource(R.string.perempuan)
+                    ),
+                    selected = jk,
+                    onSelect = { jk = it }
+                )
+            }
             Column{
                 Text(stringResource(R.string.status_perkawinan), fontWeight = FontWeight.SemiBold)
                 RadioRow(
@@ -141,7 +153,7 @@ private fun RadioRow(
         options.forEach { label ->
             Row(
                 horizontalArrangement = Arrangement.spacedBy(12.dp),
-                verticalAlignment = androidx.compose.ui.Alignment.CenterVertically
+                verticalAlignment = Alignment.CenterVertically
             ) {
                 RadioButton(selected = selected == label, onClick = { onSelect(label) })
                 Text(label)
@@ -149,3 +161,5 @@ private fun RadioRow(
         }
     }
 }
+
+

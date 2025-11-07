@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -16,6 +17,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -41,10 +44,14 @@ fun Beranda(onSubmitClick: () -> Unit) {
                 Text(stringResource(R.string.selamat_datang), fontSize = 32.sp, fontWeight = FontWeight.SemiBold)
                 Spacer(Modifier.height(24.dp))
                 Image(
-                    painter = painterResource(id = R.drawable.ic_launcher_foreground),
-                    contentDescription = "Logo",
-                    modifier = Modifier.size(160.dp)
+                    painter = painterResource(id = R.drawable.zertawwww),
+                    contentDescription = null,
+                    contentScale = ContentScale.Crop,
+                    modifier = Modifier
+                        .size(160.dp)
+                        .clip(CircleShape)
                 )
+
                 Spacer(Modifier.height(16.dp))
                 Text(stringResource(R.string.nama_mahasiswa))
                 Text(stringResource(R.string.nim), style = MaterialTheme.typography.bodySmall)
