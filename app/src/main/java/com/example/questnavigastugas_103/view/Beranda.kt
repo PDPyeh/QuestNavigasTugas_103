@@ -18,6 +18,7 @@ import androidx.compose.ui.unit.sp
 import com.example.questnavigastugas_103.R
 import androidx.compose.ui.graphics.Color
 import com.example.questnavigastugas_103.ui.theme.BlackDeep
+import com.example.questnavigastugas_103.ui.theme.GrayLight
 import com.example.questnavigastugas_103.ui.theme.RedPrimary
 
 @Composable
@@ -38,7 +39,7 @@ fun Beranda(onSubmitClick: () -> Unit) {
             Spacer(Modifier.height(8.dp))
 
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                Text(stringResource(R.string.selamat_datang), fontSize = 32.sp, fontWeight = FontWeight.SemiBold)
+                Text(stringResource(R.string.selamat_datang), fontSize = 48.sp, fontWeight = FontWeight.SemiBold,color = Color.White)
                 Spacer(Modifier.height(24.dp))
                 Image(
                     painter = painterResource(id = R.drawable.zertawwww),
@@ -50,8 +51,12 @@ fun Beranda(onSubmitClick: () -> Unit) {
                 )
 
                 Spacer(Modifier.height(16.dp))
-                Text(stringResource(R.string.nama_mahasiswa))
-                Text(stringResource(R.string.nim), style = MaterialTheme.typography.bodySmall)
+                Text(stringResource(
+                    R.string.nama_mahasiswa),
+                    color = Color.White,
+                    fontWeight = FontWeight.Medium
+                    )
+                Text(stringResource(R.string.nim), style = MaterialTheme.typography.bodySmall,color = GrayLight)
             }
             Button(
                 onClick = onSubmitClick,
