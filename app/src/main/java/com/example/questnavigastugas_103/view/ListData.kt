@@ -5,6 +5,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -29,6 +30,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.example.questnavigastugas_103.Peserta
 import com.example.questnavigastugas_103.R
+import com.example.questnavigastugas_103.ui.theme.BlackDeep
+import com.example.questnavigastugas_103.ui.theme.BlackSoft
+import com.example.questnavigastugas_103.ui.theme.RedPrimary
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -38,10 +42,6 @@ fun ListData(
     toForm: () -> Unit
 
 ){
-    val RedPrimary = Color(0xFFDF0139)
-    val BlackDeep = Color(0xFF1E1E27)
-    val BlackSoft = Color(0xFF28242A)
-    val GrayLight = Color(0xFFE2E2E2)
     Scaffold(
         topBar = {
             TopAppBar(
@@ -55,6 +55,7 @@ fun ListData(
     ) { inner ->
         Column(
             modifier = Modifier
+                .fillMaxSize()
                 .padding(inner)
                 .background(BlackDeep)
                 .padding(16.dp),
@@ -62,7 +63,7 @@ fun ListData(
         ) {
             LazyColumn(
                 verticalArrangement = Arrangement.spacedBy(12.dp),
-                modifier = Modifier.weight(1f, false)
+                modifier = Modifier.weight(1f)
             ) {
                 items(items) { p ->
                     ElevatedCard(
