@@ -101,6 +101,15 @@ fun FormPendaftaran(
                     onSelect = { status = it }
                 )
             }
+            Column {
+                Text(stringResource(R.string.alamat), fontWeight = FontWeight.SemiBold)
+                OutlinedTextField(
+                    value = alamat,
+                    onValueChange = { alamat = it },
+                    modifier = Modifier.fillMaxWidth(),
+                    placeholder = { Text(stringResource(R.string.placeholder_alamat)) }
+                )
+            }
         }
     }
 }
